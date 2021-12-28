@@ -41,7 +41,7 @@ class AnnotationCache extends Command
         $cacheData = [];
         foreach (Finder::create()->files()->name($config->get('annotation.file_patten'))->in($searchPaths) as $file) {
             $realPath = $file->getRealPath();
-            $class = ltrim(str_replace([$basePath . DIRECTORY_SEPARATOR, '.php', 'app', '/'], ['','', $baseNamespace, '\\'], $realPath), DIRECTORY_SEPARATOR);
+            $class = ltrim(str_replace([$basePath . DIRECTORY_SEPARATOR, '.php', 'app', '/'], ['','', trim($baseNamespace, '\\'), '\\'], $realPath), DIRECTORY_SEPARATOR);
 
             $reflectClass = new \ReflectionClass($class);
             foreach($reflectClass->getMethods() as $method) {
