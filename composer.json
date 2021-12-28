@@ -3,7 +3,7 @@
     "description": "laravel 注解简单实现",
     "type": "library",
     "require": {
-        "laravel/framework": "^5.*"
+        "laravel/framework": ">=5.5"
     },
     "license": "proprietary",
     "autoload": {
