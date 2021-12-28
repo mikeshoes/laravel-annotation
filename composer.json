@@ -1,0 +1,21 @@
+{
+    "name": "moshuky/laravel-annotation",
+    "description": "laravel 注解简单实现",
+    "type": "library",
+    "require": {
+        "laravel/framework": "> 5.*"
+    },
+    "license": "apache2.0",
+    "autoload": {
+        "psr-4": {
+            "LaravelAnnotation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mengxx",
+            "email": "290942762@qq.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
