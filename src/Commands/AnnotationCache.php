@@ -59,7 +59,7 @@ class AnnotationCache extends Command
         if ($cacheData) {
             file_put_contents($bootCachePath, "<?php \r\n return  " . var_export($cacheData, true) . ";");
             $this->comment('annotation config cached success');
-            return;
+            return 0;
         }
 
         $this->comment('nothing to cached');
