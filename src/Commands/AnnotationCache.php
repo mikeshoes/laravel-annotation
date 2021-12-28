@@ -15,11 +15,7 @@ class AnnotationCache extends Command
     {
         $this
             ->setName('annotation:cache')
-            ->setDescription('cache annotation config')
-            ->setHelp(<<<'EOF'
-    <info>when use this annotation plugin, you should config annotation first</info>
-EOF
-            );
+            ->setDescription('cache annotation config');
     }
 
     /**
@@ -38,14 +34,14 @@ EOF
             $searchPaths[] = app()->basePath($path);
         }
 
-        $basePath = app()->basePath('/');
+        $basePath = app()->basePath();
         $bootCachePath = app()->bootstrapPath($config->get('annotation.cache_file'));
         $baseNamespace = app()->getNamespace();
         $annotationPrefix = $config->get('annotation.annotation_prefix');
         $cacheData = [];
         foreach (Finder::create()->files()->name($config->get('annotation.file_patten'))->in($searchPaths) as $file) {
             $realPath = $file->getRealPath();
-            $class = ltrim(str_replace([$basePath, '.php', 'app', '/'], ['','', $baseNamespace, '\\'], $realPath), DIRECTORY_SEPARATOR);
+            $class = ltrim(str_replace([$basePath . DIRECTORY_SEPARATOR, '.php', 'app', '/'], ['','', $baseNamespace, '\\'], $realPath), DIRECTORY_SEPARATOR);
 
             $reflectClass = new \ReflectionClass($class);
             foreach($reflectClass->getMethods() as $method) {

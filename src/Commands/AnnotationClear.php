@@ -15,11 +15,7 @@ class AnnotationClear extends Command
     {
         $this
             ->setName('annotation:clear')
-            ->setDescription('clear annotation config cache')
-            ->setHelp(<<<'EOF'
-    <info>when use this annotation plugin, you should config annotation first</info>
-EOF
-            );
+            ->setDescription('clear annotation config cache');
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
