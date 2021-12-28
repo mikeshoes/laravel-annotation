@@ -63,6 +63,8 @@ class AnnotationCache extends Command
         }
 
         $this->comment('nothing to cached');
+
+        return 0;
     }
 
 }

@@ -26,5 +26,6 @@ class AnnotationClear extends Command
         @unlink($bootCachePath);
 
         $this->comment('annotation config clear success');
+        return 0;
     }
 }
