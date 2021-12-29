@@ -54,7 +54,7 @@ class Annotation
             list($class, $method) = Str::parseCallback($handle, 'handle');
             if (!empty($class)) {
                 $classObj = app()->make($class);
-                $classObj->$method($config, $request);
+                $classObj->$method($config, $request, $this->config[$key], $response);
             }
         }
     }
