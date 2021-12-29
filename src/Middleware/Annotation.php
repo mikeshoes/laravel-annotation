@@ -39,7 +39,7 @@ class Annotation
 
     public function terminate(Request $request, Response $response)
     {
-        if (!$this->isOpen) {
+        if (!$this->isOpen || empty($this->config)) {
             return;
         }
 
