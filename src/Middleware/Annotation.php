@@ -50,6 +50,9 @@ class Annotation
 
         foreach ($handles as $key => $handle) {
              $config = $this->config[$key][$controller][$method] ?? [];
+             if (empty($config)) {
+                 continue;
+             }
 
             list($class, $method) = Str::parseCallback($handle, 'handle');
             if (!empty($class)) {
